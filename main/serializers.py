@@ -52,7 +52,10 @@ class TeamSerializer(ModelSerializer):
         model = Team
         field = "__all__" 
 
-
+class AcademiySerializer(ModelSerializer):
+    class Meta:
+        model = Academiy
+        field = "__all__" 
 
 
 class MediaSerializer(ModelSerializer):

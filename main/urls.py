@@ -10,6 +10,5 @@ urlpatterns = [
     path('get-shop/', get_shop),
     path('get-about/', get_about),
     path('get-statistic/', get_statistic),
-    path('get-players/', get_players),
-    path('add-product', add_product)
+    path('get-players/', get_players)
 ]

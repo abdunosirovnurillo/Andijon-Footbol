@@ -60,6 +60,17 @@ def get_shop(request):
 
 
 
+
+
+@api_view(['GET'])
+def get_academiy(request):
+    academiy = Academiy.objects.last()
+    ser = AcademiySerializer(academiy, many=True)
+    data = {
+        "data":ser.data
+    }
+    return Response(data)
+
 @api_view(['GET'])
 def get_about(request):
     about = About.objects.last()
@@ -89,22 +100,6 @@ def get_players(request):
         "data":ser.data
     }
     return Response(data)
-
-
-
-
-@api_view(['GET'])
-def add_product(request):
-    form = Shop(request.POST, request.FIELS)
-    if form.is_valid():
-        form.save()
-    ser = ShopSerializer(Shop.objects.all)
-    data = {
-        "data":ser.data
-    }
-    return Response(data)
-
-
 
 
 

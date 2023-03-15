@@ -42,7 +42,10 @@ class Team(models.Model):
     name  = models.CharField(max_length=255)
 
 
-
+class Academiy(models.Model):
+    photo = models.ImageField(blank=True, null=True, upload_to='Acsdemiy/')
+    text = models.TextField()
+    name = models.CharField(max_length=255)
 
 
 class Media(models.Model):
