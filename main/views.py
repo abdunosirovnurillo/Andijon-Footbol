@@ -8,8 +8,11 @@ from datetime import datetime
 def get_info(request):
     info = Info.objects.last()
     ser = InfoSerializer(info)
+    social_med = Social_Media.objects.all()
+    social_ser = Social_MediaSerializer(social_med, many=True)
     data = {
-        "data":ser.data
+        "data":ser.data,
+        "social_media":social_ser.data
     }
     return Response(data)
 
@@ -19,11 +22,9 @@ def get_info(request):
 def get_main(request):
     news = News.objects.filter(is_banner=True)
     news_ser = NewsSerializer(news, many=True)
-    matchs = Match.objects.all()
-    ser = MatchSerializer(matchs, many=True)
+    
     data = {
         "data":news_ser.data,
-        "matchs":ser.data
     }
     return Response(data)
 
@@ -85,8 +86,11 @@ def get_about(request):
 def get_statistic(request):
     match_next = Match.objects.all()
     ser_next = MatchSerializer(match_next, many=True)
+    qurt = Quarter.objects.all()
+    ser = QuarterSerializer(qurt, many=True)
     data = {
-        "data": ser_next.data
+        "data": ser_next.data,
+        "quart":ser.data
     }
     return Response(data)
 

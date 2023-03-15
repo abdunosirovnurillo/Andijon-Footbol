@@ -59,6 +59,7 @@ class Media(models.Model):
 
 
 
+
 class About(models.Model):
     img = models.ImageField(null=True, blank=True, upload_to="img/")
     name = models.CharField(max_length=255)
@@ -88,9 +89,10 @@ class Statistic(models.Model):
     text = models.TextField()
     teams_vs = models.IntegerField()
     watch = models.DateField()
-    quarter = models.IntegerField()
     table = models.IntegerField()
 
+class Quarter(models.Model):
+    number = models.CharField(max_length=255)
 
 
 class Shop(models.Model):

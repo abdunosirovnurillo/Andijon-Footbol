@@ -58,11 +58,17 @@ class AcademiySerializer(ModelSerializer):
         field = "__all__" 
 
 
+class QuarterSerializer(ModelSerializer):
+    class Meta:
+        model = Quarter
+        field = "__all__" 
+
+
+
 class MediaSerializer(ModelSerializer):
     class Meta:
         model = Media
         field = "__all__" 
-
 
 
 
